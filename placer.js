@@ -1,5 +1,5 @@
 var latitude = function (latitude, lowBound, upBound) {
-	this.latitude;
+	this.latitude = latitude;
 	this.upBound = upBound;
 	this.lowBound = lowBound;
 };
@@ -38,14 +38,17 @@ images = [];
 var io1 = new imgObj("cc.jpg",high);
 images.push(io1);
 var io2 = new imgObj("hc.jpg",mid);
-images.push(io1);
+images.push(io2);
 var io3 = new imgObj("lc.jpg",low);
-images.push(io1);
+images.push(io3);
 
 var whichLink = Math.floor(Math.random() * links.length);
 
 var whichImg = Math.floor(Math.random() * images.length);
 
+console.log(whichImg)
 console.log("image: " + images[whichImg].file);
+console.log("latitude: " + images[whichImg].latitude.latitude)
 console.log("location: " + images[whichImg].place());
 console.log("link: " + links[whichLink]);
+
