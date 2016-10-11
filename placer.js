@@ -17,7 +17,7 @@ imgObj.prototype.constructor = imgObj;
 
 imgObj.prototype.place = function() {
 	var placeLat = Math.floor(Math.random() * (this.latitude.upBound - this.latitude.lowBound + 1) + this.latitude.lowBound);
-	var placeLong = Math.floor(Math.random() * 800)
+	var placeLong = Math.floor(Math.random() * 600)
 	return [placeLat, placeLong];
 };
 	
@@ -45,10 +45,21 @@ images.push(io3);
 var whichLink = Math.floor(Math.random() * links.length);
 
 var whichImg = Math.floor(Math.random() * images.length);
+var latLong = images[whichImg].place();
+var lat = latLong[0];
+var lng = latLong[1];
+var elem = document.createElement("img");
+elem.src = images[whichImg].file;
+//elem.style.position = "absolute";
+elem.style.left = lng + "px";
+elem.style.bottom = lat + "px";
+elem.setAttribute("height","100px");
+elem.setAttribute("width","100px");
+document.getElementById("cntr").appendChild(elem);
+console.log(elem.style.position);
 
-console.log(whichImg)
 console.log("image: " + images[whichImg].file);
 console.log("latitude: " + images[whichImg].latitude.latitude)
-console.log("location: " + images[whichImg].place());
+console.log("location: " + images[whichImg].place().placeLat);
 console.log("link: " + links[whichLink]);
 
