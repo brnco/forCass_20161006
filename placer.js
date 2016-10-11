@@ -50,7 +50,7 @@ var lat = latLong[0];
 var lng = latLong[1];
 var elem = document.createElement("img");
 elem.src = images[whichImg].file;
-//elem.style.position = "absolute";
+elem.style.position = "absolute";
 elem.style.left = lng + "px";
 elem.style.bottom = lat + "px";
 elem.setAttribute("height","100px");
