@@ -55,7 +55,10 @@ elem.style.left = lng + "px";
 elem.style.bottom = lat + "px";
 elem.setAttribute("height","100px");
 elem.setAttribute("width","100px");
-document.getElementById("cntr").appendChild(elem);
+var link = document.createElement("a");
+link.href = links[whichLink];
+link.appendChild(elem);
+document.getElementById("cntr").appendChild(link);
 console.log(elem.style.position);
 
 console.log("image: " + images[whichImg].file);
